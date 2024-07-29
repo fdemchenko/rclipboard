@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bytes"
+	"bufio"
 	"net"
 
 	"golang.design/x/clipboard"
@@ -21,13 +21,13 @@ func startPullClipboardListener(address string) chan error {
 				errorsChan <- err
 			}
 
-			buffer := new(bytes.Buffer)
-			_, err = buffer.ReadFrom(conn)
+			r := bufio.NewReader(conn)
+			message, err := r.ReadBytes('\n')
 			if err != nil {
 				errorsChan <- err
 			}
 
-			if buffer.String() != PullClipboardMessage {
+			if string(message) != PullClipboardMessage {
 				conn.Close()
 				continue
 			}

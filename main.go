@@ -15,7 +15,7 @@ type Config struct {
 	RemoteAddr string
 }
 
-const PullClipboardMessage = "PULL_CLIPBOARD"
+const PullClipboardMessage = "PULL_CLIPBOARD\n"
 
 func main() {
 	var cfg Config
