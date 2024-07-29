@@ -15,6 +15,12 @@ Later you can create custom key mappings in your OS, to control clipbord pulling
 
 Recommended way to start app is to create user specific systemd service on Linux, and scheduled task on Windows.
 
+## Installation
+
+`go install github.com/fdemchenko/rclipboard` - to install remote clipboard
+
+`go install github.com/fdemchenko/rclipboard/cmd/pinger` - to install tcp client for sending trigger (optionally, for Windows)
+
 ## Configuration
 ```
 Usage of rclipboard:
