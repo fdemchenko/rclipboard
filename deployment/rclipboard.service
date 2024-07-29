@@ -1,0 +1,12 @@
+[Unit]
+Description=Remote clipboard service
+
+[Service]
+ExecStart=/usr/local/bin/rclipboard --listen-addr=<listen addr>:<port> --remote-addr=<remote addr>:<port>
+Type=simple
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
+
