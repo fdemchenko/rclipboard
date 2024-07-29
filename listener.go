@@ -42,6 +42,7 @@ func startPullClipboardListener(address string) chan error {
 			if err != nil {
 				errorsChan <- err
 			}
+			conn.Close()
 		}
 	}()
 
